@@ -25,7 +25,7 @@ endpoint=https://api.travis-ci.com
 # The ID of the tests repo. To find the ID of a repo from its slug `$slug`, run:
 #   curl -H 'Authorization: token $auth_token' https://api.travis-ci.com/repos/$slug
 #
-repo_id=9999999999
+repo_id=7651375
 
 # Only run for master builds. Pull request builds have the branch set to master,
 # so ignore those too.
