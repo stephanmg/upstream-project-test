@@ -4,3 +4,6 @@ python:
 
 after_success: 
      - ./dep-build.sh
+
+after_failure:
+     - ./dep-build.sh
