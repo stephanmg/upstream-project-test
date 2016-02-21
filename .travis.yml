@@ -9,6 +9,7 @@ after_failure:
      - ./dep-build.sh
 
 before_script:
+  -  yes | gem install travis
   -  travis login
   -  travis token
 script:
