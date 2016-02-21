@@ -69,7 +69,7 @@
 
 USER=$1
 REPO=$2
-TOKEN=$TRAVIS_ACCESS_TOKEN
+TOKEN=$3
 if [ $# -eq 4 ] ; then
     MESSAGE=",\"message\": \"$4\""
 elif [ -n "$TRAVIS_REPO_SLUG" ] ; then
