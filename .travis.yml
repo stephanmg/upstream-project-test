@@ -6,12 +6,17 @@ after_failure:
      - ./dep-build.sh
 
 before_script:
-   - |
-       if [[ ($TRAVIS_BRANCH == master) &&
-             ($TRAVIS_PULL_REQUEST == false) &&
-             ( (! $TRAVIS_JOB_NUMBER == *.*) || ($TRAVIS_JOB_NUMBER == *.1) ) ]] ; then
-         ./trigger-travis.sh stephanmg upstream1 a8107b06ecc50c5094cfb6d52d51d600710c5f57
-       fi
+   - gem install travis
+   - travis login --org
+   - travis token
+
+#before_script:
+ ##  - |
+   #    if [[ ($TRAVIS_BRANCH == master) &&
+    #         ($TRAVIS_PULL_REQUEST == false) &&
+     #        ( (! $TRAVIS_JOB_NUMBER == *.*) || ($TRAVIS_JOB_NUMBER == *.1) ) ]] ; then
+     #    ./trigger-travis.sh stephanmg upstream1 a8107b06ecc50c5094cfb6d52d51d600710c5f57
+     #  fi
 
 script:
    -
