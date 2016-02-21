@@ -1,4 +1,4 @@
-#!/bin/sh -f
+#!/bin/bash
 
 # Trigger a new Travis-CI job.
 # Usage:
