@@ -15,7 +15,7 @@
 #   travis login
 #   travis token
 #
-auth_token=abcdefghijklmnopqrstuv
+auth_token=CCyDBCdxw1tCgdbZRWNz
 
 # The Travis API endpoint. .com and .org are the commercial and free versions,
 # respectively; enterprise users will have their own hostname.
