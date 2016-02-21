@@ -7,7 +7,7 @@ after_failure:
 
 before_script:
    - gem install travis
-  - travis login --help --skip-completion-check
+   - travis login --help --skip-completion-check
    - ./script.sh
 
 #before_script:
