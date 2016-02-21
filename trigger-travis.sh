@@ -100,5 +100,6 @@ if grep -q '"@type": "error"' /tmp/travis-request-output.$$.txt; then
     exit 1
 fi
 if grep -q 'access denied' /tmp/travis-request-output.$$.txt; then
+   cat /tmp/travis-request-output.$$.txt
     exit 1
 fi
