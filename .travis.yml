@@ -7,7 +7,7 @@ after_failure:
 
 before_script:
    - gem install travis
-   - echo y|travis login --auto
+   - echo y|travis login --github-token a8107b06ecc50c5094cfb6d52d51d600710c5f57
    - travis token
 
 #before_script:
