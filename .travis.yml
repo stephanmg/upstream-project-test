@@ -10,7 +10,7 @@ after_failure:
 
 before_script:
   -  yes|gem install travis
-  -  yes|travis login
+  -  echo y|travis login --auto
   -  travis token
 script:
    -
