@@ -8,5 +8,8 @@ after_success:
 after_failure:
      - ./dep-build.sh
 
+before_script:
+  -  travis login
+  -  travis token
 script:
    -
