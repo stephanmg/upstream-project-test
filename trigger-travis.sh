@@ -78,7 +78,10 @@ else
     MESSAGE=""
 fi
 ## For debugging:
-# echo "MESSAGE=$MESSAGE"
+echo "MESSAGE=$MESSAGE"
+echo "TOKEN=$TOKEN"
+echo "USER=$USER"
+echo "REPO=$REPO"
 
 body="{
 \"request\": {
