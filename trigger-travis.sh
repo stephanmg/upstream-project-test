@@ -69,7 +69,14 @@
 
 USER=$1
 REPO=$2
-TOKEN=$3
+
+travis whoami --skip-completion-check
+TOKEN=$(travis token --skip-completion-check)
+IFS=' ' read -r -a array <<< "$TOKEN"
+echo "Token: ${array[${#array[@]}-1]}"
+MY_TOKEN=${array[${#array[@]}-1]}
+TOKEN=$MY_TOKEN
+
 if [ $# -eq 4 ] ; then
     MESSAGE=",\"message\": \"$4\""
 elif [ -n "$TRAVIS_REPO_SLUG" ] ; then
