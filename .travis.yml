@@ -4,12 +4,12 @@ python:
 after_failure:
      - ./dep-build.sh
 
-after_success:
+before_script:
    - |
        if [[ ($TRAVIS_BRANCH == master) &&
              ($TRAVIS_PULL_REQUEST == false) &&
              ( (! $TRAVIS_JOB_NUMBER == *.*) || ($TRAVIS_JOB_NUMBER == *.1) ) ]] ; then
-         ./trigger-travis.sh stephanmg downstream foo
+         ./trigger-travis.sh 1750463 downstream foo
        fi
 
 script:
