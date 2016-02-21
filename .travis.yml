@@ -4,7 +4,7 @@ python:
 after_failure:
      - ./dep-build.sh
 
-before_script:
+after_success:
    - |
        if [[ ($TRAVIS_BRANCH == master) &&
              ($TRAVIS_PULL_REQUEST == false) &&
