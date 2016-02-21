@@ -9,8 +9,12 @@ after_failure:
      - ./dep-build.sh
 
 before_script:
-  -  echo y|gem install travis
-  -  echo y|travis login --org --auto
-  -  travis token
+ after_success:
+   - |
+       if [[ ($TRAVIS_BRANCH == master) &&
+             ($TRAVIS_PULL_REQUEST == false) &&
+             ( (! $TRAVIS_JOB_NUMBER == *.*) || ($TRAVIS_JOB_NUMBER == *.1) ) ]] ; then
+         curl -LO https://raw.github.com/mernst/plume-lib/master/bin/trigger-travis.sh
+         sh trigger-travis.sh OTHERGITHUBID OTHERGITHUBPROJECT $TRAVIS_ACCESS_TOKEN
 script:
    -
