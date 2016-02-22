@@ -11,4 +11,4 @@ script:
    -
 
 after_script:
-   - ./trigger.sh stephanmg downstream $TRAVIS_ACCESS_TOKEN master
+   - ./trigger.sh stephanmg downstream master $TRAVIS_ACCESS_TOKEN 
