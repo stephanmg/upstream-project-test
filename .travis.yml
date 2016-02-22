@@ -11,9 +11,4 @@ script:
    -
 
 after_script:
-   - |
-       if [[ ($TRAVIS_BRANCH == master) &&
-             ($TRAVIS_PULL_REQUEST == false) &&
-            ( (! $TRAVIS_JOB_NUMBER == *.*) || ($TRAVIS_JOB_NUMBER == *.1) ) ]] ; then
-         ./trigger-travis.sh stephanmg downstream $TRAVIS_ACCESS_TOKEN
-       fi
+   - ./trigger.sh stephanmg downstream $TRAVIS_ACCESS_TOKEN master
