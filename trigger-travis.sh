@@ -69,8 +69,9 @@
 
 USER=$1
 REPO=$2
+ACCESS_TOKEN=$3
 
-travis login --skip-completion-check --github-token $TRAVIS_ACCESS_TOKEN
+travis login --skip-completion-check --github-token $ACCESS_TOKEN
 travis whoami --skip-completion-check
 TOKEN=$(travis token --skip-completion-check)
 IFS=' ' read -r -a array <<< "$TOKEN"
