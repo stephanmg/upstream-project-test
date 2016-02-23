@@ -69,9 +69,9 @@
 
 USER=$1
 REPO=$2
-ACCESS_TOKEN=$3
+GITHUB_ACCESS_TOKEN=$3
 
-travis login --skip-completion-check --github-token $ACCESS_TOKEN
+travis login --skip-completion-check --github-token $GITHUB_ACCESS_TOKEN
 travis whoami --skip-completion-check
 TOKEN=$(travis token --skip-completion-check)
 IFS=' ' read -r -a array <<< "$TOKEN"
@@ -105,7 +105,7 @@ curl -s -X POST \
   -H "Travis-API-Version: 3" \
   -H "Authorization: token ${TOKEN}" \
   -d "$body" \
-  https://api.travis-ci.org/repo/${USER}%2F${REPO}/requests \
+  "https://api.travis-ci.org/repo/${USER}/${REPO}/requests" \
  | tee /tmp/travis-request-output.$$.txt
 
 if grep -q '"@type": "error"' /tmp/travis-request-output.$$.txt; then
