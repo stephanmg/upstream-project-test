@@ -13,4 +13,5 @@ script:
 after_script:
    - curl -LO https://raw.github.com/stephanmg/travis-dependent-builds/master/trigger.sh; 
    - chmod +x trigger.sh
-   - ./trigger.sh stephanmg downstream-project-test master $TRAVIS_ACCESS_TOKEN  ""
+   #- ./trigger.sh stephanmg downstream-project-test master $TRAVIS_ACCESS_TOKEN  ""
+   - ./trigger.sh stephanmg VRL-Neurolucida-Plugin master $TRAVIS_ACCESS_TOKEN ""
